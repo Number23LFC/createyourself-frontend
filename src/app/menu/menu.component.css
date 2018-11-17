@@ -1,0 +1,32 @@
+div.menu {
+  text-align: center;
+  background-color: #222;
+  border-color: #080808;
+  height: 107px;
+}
+
+div.item {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 200px;
+}
+img {
+  margin: 5px;
+  width: 70px;
+  height: 70px;
+}
+.caption {
+  display: block;
+}
+
+a {text-decoration: none;
+  color: lavenderblush;
+}
+
+a:hover {
+  color: gold;
+  font-size: large;
+}
+
+
