@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateUpdateCategoryComponent } from './create-update-category/create-update-category.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {MatCheckboxModule, MatIconModule, MatMenuModule, MatSelectModule} from '@angular/material';
 
 
 
@@ -30,7 +31,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatSelectModule,
+    MatIconModule,
+    MatMenuModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
