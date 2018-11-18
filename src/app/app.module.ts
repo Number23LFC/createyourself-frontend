@@ -10,6 +10,8 @@ import { SettingsComponent } from './settings/settings.component';
 import { ObjectivesComponent } from './objectives/objectives.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateUpdateCategoryComponent } from './create-update-category/create-update-category.component';
+import { MatCardModule } from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { CreateUpdateCategoryComponent } from './create-update-category/create-u
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
