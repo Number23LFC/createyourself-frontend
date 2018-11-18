@@ -9,6 +9,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { SettingsComponent } from './settings/settings.component';
 import { ObjectivesComponent } from './objectives/objectives.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CreateUpdateCategoryComponent } from './create-update-category/create-update-category.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     StatsComponent,
     CategoriesComponent,
     SettingsComponent,
-    ObjectivesComponent
+    ObjectivesComponent,
+    CreateUpdateCategoryComponent
   ],
   imports: [
     BrowserModule,
