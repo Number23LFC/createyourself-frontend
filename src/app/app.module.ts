@@ -11,6 +11,8 @@ import { ObjectivesComponent } from './objectives/objectives.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateUpdateCategoryComponent } from './create-update-category/create-update-category.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 
 @NgModule({
@@ -21,13 +23,14 @@ import { MatCardModule } from '@angular/material/card';
     CategoriesComponent,
     SettingsComponent,
     ObjectivesComponent,
-    CreateUpdateCategoryComponent
+    CreateUpdateCategoryComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

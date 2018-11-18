@@ -1,4 +1,12 @@
 <mat-card>
   <mat-card-title>Statystyki</mat-card-title>
-  <mat-card-content></mat-card-content>
+  <mat-card-content>
+    <mat-progress-spinner
+      class="example-margin"
+      [color]="color"
+      [mode]="mode"
+      [value]="value">
+    </mat-progress-spinner>
+    <h1>{{ value }} %</h1>
+  </mat-card-content>
 </mat-card>
