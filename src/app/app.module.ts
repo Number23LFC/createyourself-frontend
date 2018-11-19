@@ -13,6 +13,7 @@ import { CreateUpdateCategoryComponent } from './create-update-category/create-u
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatCheckboxModule, MatIconModule, MatMenuModule, MatSelectModule} from '@angular/material';
+import { DatesComponent } from './dates/dates.component';
 
 
 
@@ -25,6 +26,7 @@ import {MatCheckboxModule, MatIconModule, MatMenuModule, MatSelectModule} from '
     SettingsComponent,
     ObjectivesComponent,
     CreateUpdateCategoryComponent,
+    DatesComponent,
   ],
   imports: [
     BrowserModule,
