@@ -4,10 +4,12 @@ import {SettingsComponent} from "./settings/settings.component";
 import {CategoriesComponent} from "./categories/categories.component";
 import {StatsComponent} from './stats/stats.component';
 import {ObjectivesComponent} from './objectives/objectives.component';
+import {CelebrationsComponent} from './celebrations/celebrations.component';
 const appRoutes: Routes = [
   {path: 'objectives', component: ObjectivesComponent},
   {path: 'settings', component: SettingsComponent},
   {path: 'categories', component: CategoriesComponent},
+  {path: 'celebrations', component: CelebrationsComponent},
   {path: 'stats', component: StatsComponent, pathMatch: 'full'},
   {path: '', component: StatsComponent, pathMatch: 'full'},
   //{path: '**', component: PageNotFoundComponent},

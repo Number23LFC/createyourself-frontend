@@ -12,8 +12,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateUpdateCategoryComponent } from './create-update-category/create-update-category.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import {MatCheckboxModule, MatIconModule, MatMenuModule, MatSelectModule} from '@angular/material';
-import { DatesComponent } from './dates/dates.component';
+import { MatCheckboxModule, MatIconModule, MatMenuModule, MatSelectModule} from '@angular/material';
+import { CelebrationsComponent } from './celebrations/celebrations.component';
+import {CelebrationService} from './service/celebration.service';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -26,7 +28,7 @@ import { DatesComponent } from './dates/dates.component';
     SettingsComponent,
     ObjectivesComponent,
     CreateUpdateCategoryComponent,
-    DatesComponent,
+    CelebrationsComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,9 +39,10 @@ import { DatesComponent } from './dates/dates.component';
     MatSelectModule,
     MatIconModule,
     MatMenuModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CelebrationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
