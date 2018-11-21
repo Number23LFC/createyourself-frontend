@@ -17,18 +17,18 @@ export class CelebrationService {
 
   constructor(private http: HttpClient) {}
 
-  private celebrationUrl = 'http://localhost:8080/';
+  private celebrationUrl = 'http://localhost:8080/celebrations';
 
   getCelebrations(): Observable<Array<Celebration>> {
-    return this.http.get<Array<Celebration>>(this.celebrationUrl + 'celebrations');
+    return this.http.get<Array<Celebration>>(this.celebrationUrl);
   }
 
   // public deleteUser(user) {
   //   return this.http.delete(this.celebrationUrl + '/'+ celebration.id);
   // }
   //
-  // public createUser(user) {
-  //   return this.http.post<User>(this.celebrationUrl, user);
-  // }
+  public createCelebration(celebration): Observable<Celebration> {
+    return this.http.post<Celebration>(this.celebrationUrl , celebration);
+  }
 
 }
