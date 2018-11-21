@@ -4,14 +4,19 @@
     <div class="col-md-6">
       <form>
         <div class="form-group">
-          <label for="description">Opis:</label>
+          <mat-form-field>
           <input matInput [(ngModel)]="celebration.description" placeholder="Opis" name="description" class="form-control" id="description">
+          </mat-form-field>
         </div>
 
         <div class="form-group">
-          <label for="date">Data:</label>
-          <input matInput [(ngModel)]="celebration.date" placeholder="Data" name="date" class="form-control" id="date">
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Data" [(ngModel)]="celebration.date" name="date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
         </div>
+
 
         <button class="btn btn-success" (click)="createCelebration()">Dodaj</button>
       </form>

@@ -11,7 +11,7 @@ import {Celebration} from '../model/Celebration';
 export class AddUpdateCelebrationComponent implements OnInit {
   celebration: Celebration = {
     description: '',
-    date: new Date(),
+    date: null,
     id: null,
   };
 
@@ -25,5 +25,6 @@ export class AddUpdateCelebrationComponent implements OnInit {
       .subscribe( data => {
         alert('Celebration created successfully.');
       });
-    }
+    this.router.navigate(['celebrations']);
+  }
 }

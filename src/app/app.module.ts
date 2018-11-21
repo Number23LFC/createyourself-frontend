@@ -12,7 +12,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateUpdateCategoryComponent } from './create-update-category/create-update-category.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import {MatCheckboxModule, MatIconModule, MatInputModule, MatMenuModule, MatSelectModule} from '@angular/material';
+import {
+  MatCheckboxModule,
+  MatDatepickerModule,
+  MatIconModule,
+  MatInputModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatSelectModule
+} from '@angular/material';
 import { CelebrationsComponent } from './celebrations/celebrations.component';
 import {CelebrationService} from './service/celebration.service';
 import {HttpClientModule} from '@angular/common/http';
@@ -45,9 +53,11 @@ import {FormsModule} from '@angular/forms';
     MatCheckboxModule,
     HttpClientModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [CelebrationService],
+  providers: [CelebrationService, MatDatepickerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
