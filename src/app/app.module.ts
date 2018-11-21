@@ -13,6 +13,7 @@ import { CreateUpdateCategoryComponent } from './create-update-category/create-u
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {
+  MatButtonModule,
   MatCheckboxModule,
   MatDatepickerModule,
   MatIconModule,
@@ -55,7 +56,8 @@ import {FormsModule} from '@angular/forms';
     MatInputModule,
     FormsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatButtonModule
   ],
   providers: [CelebrationService, MatDatepickerModule],
   bootstrap: [AppComponent]
