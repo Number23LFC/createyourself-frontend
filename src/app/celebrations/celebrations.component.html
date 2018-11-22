@@ -13,7 +13,8 @@
         <tr *ngFor="let celebration of celebrations">
           <td> {{ celebration.date }}</td>
           <td> {{ celebration.description}}</td>
-          <td><button class="btn btn-danger" (click)="deleteUser(celebration)">Edycja</button></td>
+          <td><button class="btn btn-danger" (click)="deleteCelebration(celebration)">Usuń</button></td>
+          <mat-divider></mat-divider>
         </tr>
         </tbody>
       </table>

@@ -15,9 +15,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {
   MatButtonModule,
   MatCheckboxModule,
-  MatDatepickerModule,
+  MatDatepickerModule, MatDividerModule,
   MatIconModule,
-  MatInputModule,
+  MatInputModule, MatListModule,
   MatMenuModule,
   MatNativeDateModule,
   MatSelectModule
@@ -57,7 +57,9 @@ import {FormsModule} from '@angular/forms';
     FormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDividerModule,
+    MatListModule
   ],
   providers: [CelebrationService, MatDatepickerModule],
   bootstrap: [AppComponent]
