@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {Category} from '../model/Category';
+import {CategoryService} from '../service/category.service';
 
 @Component({
   selector: 'app-categories',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor() { }
+  categories: Category[];
+
+  constructor(private router: Router, private categoryService: CategoryService) { }
 
   ngOnInit() {
+    this.categoryService.getCategories()
+      .subscribe( data => {
+        console.log(data);
+        console.log(typeof data);
+        this.categories = data;
+      });
   }
 
 }
