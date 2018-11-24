@@ -1,17 +1,15 @@
-div.dream {
-  background-color: #424242;
-  border-radius: 32px;
+.objective-card {
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: inherit;
 }
 
-/*.mat-card {*/
-  /*border-radius: 32px;*/
-/*}*/
-
-.mat-icon-button{
-  float: right;
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
 }
 
-.dreamImg{
-  float:left;
-  width: 50%;
+img {
+  max-width: 40%;
 }
