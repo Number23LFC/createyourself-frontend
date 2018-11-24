@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {Category} from '../model/Category';
+import {Router} from '@angular/router';
+import {CategoryService} from '../service/category.service';
+import {Objective} from '../model/Objective';
+import {ObjectiveService} from '../service/objective.service';
 
 @Component({
   selector: 'app-objectives',
@@ -7,9 +12,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ObjectivesComponent implements OnInit {
 
-  constructor() { }
+  objectives: Objective[];
+
+  constructor(private router: Router, private objectiveService: ObjectiveService) { }
 
   ngOnInit() {
+    this.objectiveService.getObjectives()
+      .subscribe( data => {
+        console.log(data);
+        console.log(typeof data);
+        this.objectives = data;
+      });
   }
 
 }

@@ -1,0 +1,17 @@
+div.dream {
+  background-color: #424242;
+  border-radius: 32px;
+}
+
+/*.mat-card {*/
+  /*border-radius: 32px;*/
+/*}*/
+
+.mat-icon-button{
+  float: right;
+}
+
+.dreamImg{
+  float:left;
+  width: 50%;
+}

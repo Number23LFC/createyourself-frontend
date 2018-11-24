@@ -28,6 +28,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AddUpdateCelebrationComponent } from './add-update-celebration/add-update-celebration.component';
 import {FormsModule} from '@angular/forms';
 import {CategoryService} from './service/category.service';
+import {ObjectiveService} from './service/objective.service';
 
 
 
@@ -62,7 +63,7 @@ import {CategoryService} from './service/category.service';
     MatDividerModule,
     MatListModule
   ],
-  providers: [CelebrationService, CategoryService,  MatDatepickerModule],
+  providers: [CelebrationService, CategoryService, ObjectiveService,  MatDatepickerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,46 @@
 <mat-card>
   <mat-card-title>Cele</mat-card-title>
-  <mat-card-content></mat-card-content>
+  <mat-card-content>
+
+    <ng-container *ngFor="let dream of objectives">
+      <div class="dream">
+        <mat-card class="example-card">
+          <div class="dreamImg">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"><img src="assets/icon/airplane.svg" height="35" width="35"/>
+              </div>
+              <mat-card-title>{{ dream.name }}</mat-card-title>
+              <mat-card-subtitle>{{ dream.category.name }}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="assets/iceland.JPG">
+            <mat-card-content>
+              <p>
+                {{ dream.description }}
+              </p>
+            </mat-card-content>
+          </div>
+          <div class="dreamDesc">
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>edit</mat-icon>
+                <span>Edycja</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>done</mat-icon>
+                <span>Zrobione!</span>
+              </button>
+            </mat-menu>
+            <br><br>
+
+            <ul *ngFor="let i of [1,2,3]">
+              <mat-checkbox>Checkpoint - {{i}}</mat-checkbox>
+            </ul>
+          </div>
+        </mat-card>
+      </div>
+    </ng-container>
+  </mat-card-content>
 </mat-card>
