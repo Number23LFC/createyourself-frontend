@@ -23,11 +23,7 @@ export class CelebrationService {
     return this.http.get<Array<Celebration>>(this.celebrationUrl);
   }
 
-  // public deleteUser(user) {
-  //   return this.http.delete(this.celebrationUrl + '/'+ celebration.id);
-  // }
-  //
-  public createCelebration(celebration): Observable<Celebration> {
+  createCelebration(celebration): Observable<Celebration> {
     return this.http.post<Celebration>(this.celebrationUrl , celebration);
   }
 

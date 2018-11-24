@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Category} from '../model/Category';
-import {Celebration} from '../model/Celebration';
 
 const httpOptions = {
   headers: new HttpHeaders({

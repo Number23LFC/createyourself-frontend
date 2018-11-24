@@ -2,13 +2,21 @@
   <mat-card-title>Kategorie</mat-card-title>
   <mat-card-content>
     <mat-list>
-      <h3 mat-subheader>Folders</h3>
+      <h3 mat-subheader>Kategorie</h3>
       <mat-list-item *ngFor="let category of categories">
         <mat-icon mat-list-icon>folder</mat-icon>
         <h4 mat-line>{{category.name}}</h4>
         <p mat-line> {{category.description}} </p>
-        <button class="btn btn-danger" (click)="deleteCelebration(celebration)">Usuń</button>
+        <button mat-icon-button>
+          <mat-icon aria-label="Dodaj">edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="deleteCelebration(celebration)">
+          <mat-icon aria-label="Usuń">delete</mat-icon>
+        </button>
       </mat-list-item>
     </mat-list>
+    <button mat-icon-button>
+      <mat-icon aria-label="Dodaj">add</mat-icon>
+    </button>
   </mat-card-content>
 </mat-card>

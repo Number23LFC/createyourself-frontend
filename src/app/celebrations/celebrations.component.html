@@ -13,12 +13,21 @@
         <tr *ngFor="let celebration of celebrations">
           <td> {{ celebration.date }}</td>
           <td> {{ celebration.description}}</td>
-          <td><button class="btn btn-danger" (click)="deleteCelebration(celebration)">Usuń</button></td>
+          <td>
+          <button mat-icon-button>
+            <mat-icon aria-label="Dodaj">edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="deleteCelebration(celebration)">
+            <mat-icon aria-label="Usuń">delete</mat-icon>
+          </button>
+          </td>
           <mat-divider></mat-divider>
         </tr>
         </tbody>
       </table>
     </div>
-    <a style="margin-left:10px" routerLink="/celebrations/add">Dodaj</a>
+    <button mat-icon-button routerLink="/celebrations/add">
+      <mat-icon aria-label="Usuń">add</mat-icon>
+    </button>
   </mat-card-content>
 </mat-card>
