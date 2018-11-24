@@ -1,12 +1,21 @@
 <mat-card>
   <mat-card-title>Cele</mat-card-title>
   <mat-card-content>
+
+    <mat-form-field>
+      <mat-select [(value)]="selected">
+        <ng-container *ngFor="let category of categories">
+          <mat-option>{{ category.name }}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+
     <ng-container *ngFor="let objective of objectives">
     <mat-card class="objective-card">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>{{ objective.name }}</mat-card-title>
-        <mat-card-subtitle> {{ objective.name}}</mat-card-subtitle>
+        <mat-card-subtitle> {{ objective.category.name}}</mat-card-subtitle>
       </mat-card-header>
       <img mat-card-image src="assets/iceland.JPG" alt="Photo of a Shiba Inu">
       <mat-card-content>

@@ -13,8 +13,10 @@ import {ObjectiveService} from '../service/objective.service';
 export class ObjectivesComponent implements OnInit {
 
   objectives: Objective[];
+  categories: Category[];
+  selected: Category;
 
-  constructor(private router: Router, private objectiveService: ObjectiveService) { }
+  constructor(private router: Router, private objectiveService: ObjectiveService, private categoryService: CategoryService) { }
 
   ngOnInit() {
     this.objectiveService.getObjectives()
@@ -23,6 +25,13 @@ export class ObjectivesComponent implements OnInit {
         console.log(typeof data);
         this.objectives = data;
       });
+    this.categoryService.getCategories().subscribe(
+      categories => {
+        console.log(categories);
+        this.categories = categories;
+      }
+    );
   }
+
 
 }
