@@ -31,4 +31,8 @@ export class CelebrationService {
     return this.http.post<Celebration>(this.celebrationUrl , celebration);
   }
 
+  deleteCustomer(id: number): Observable<any> {
+    return this.http.delete(`${this.celebrationUrl}/${id}`, { responseType: 'text' });
+  }
+
 }

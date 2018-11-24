@@ -23,4 +23,17 @@ export class CelebrationsComponent implements OnInit {
       });
   }
 
+  deleteCelebration(celebration: Celebration) {
+    this.celebrationService.deleteCustomer(celebration.id)
+      .subscribe(
+        data => {
+          console.log(data);
+          this.celebrations = this.celebrationService.getCelebrations().subscribe( celebs => {
+            this.celebrations = celebs;
+            },
+            error1 => console.log(error1));
+        },
+        error => console.log(error));
+  }
+
 }
