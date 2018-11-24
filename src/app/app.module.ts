@@ -12,8 +12,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateUpdateCategoryComponent } from './create-update-category/create-update-category.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import {MatCheckboxModule, MatIconModule, MatMenuModule, MatSelectModule} from '@angular/material';
-import { DatesComponent } from './dates/dates.component';
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatDatepickerModule, MatDividerModule,
+  MatIconModule,
+  MatInputModule, MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatSelectModule
+} from '@angular/material';
+import { CelebrationsComponent } from './celebrations/celebrations.component';
+import {CelebrationService} from './service/celebration.service';
+import {HttpClientModule} from '@angular/common/http';
+import { AddUpdateCelebrationComponent } from './add-update-celebration/add-update-celebration.component';
+import {FormsModule} from '@angular/forms';
 
 
 
@@ -26,7 +39,8 @@ import { DatesComponent } from './dates/dates.component';
     SettingsComponent,
     ObjectivesComponent,
     CreateUpdateCategoryComponent,
-    DatesComponent,
+    CelebrationsComponent,
+    AddUpdateCelebrationComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,9 +51,17 @@ import { DatesComponent } from './dates/dates.component';
     MatSelectModule,
     MatIconModule,
     MatMenuModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    HttpClientModule,
+    MatInputModule,
+    FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatListModule
   ],
-  providers: [],
+  providers: [CelebrationService, MatDatepickerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

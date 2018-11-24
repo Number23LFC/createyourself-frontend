@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-card-title>Daty</mat-card-title>
+  <mat-card-content>
+    <div class="col-md-12">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Data </th>
+          <th>Opis</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let celebration of celebrations">
+          <td> {{ celebration.date }}</td>
+          <td> {{ celebration.description}}</td>
+          <td><button class="btn btn-danger" (click)="deleteCelebration(celebration)">Usuń</button></td>
+          <mat-divider></mat-divider>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <a style="margin-left:10px" routerLink="/celebrations/add">Dodaj</a>
+  </mat-card-content>
+</mat-card>
