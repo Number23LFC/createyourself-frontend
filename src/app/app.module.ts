@@ -15,7 +15,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {
   MatButtonModule,
   MatCheckboxModule,
-  MatDatepickerModule, MatDividerModule,
+  MatDatepickerModule, MatDividerModule, MatGridListModule,
   MatIconModule,
   MatInputModule, MatListModule,
   MatMenuModule,
@@ -29,6 +29,8 @@ import { AddUpdateCelebrationComponent } from './add-update-celebration/add-upda
 import {FormsModule} from '@angular/forms';
 import {CategoryService} from './service/category.service';
 import {ObjectiveService} from './service/objective.service';
+import { AddUpdateObjectiveComponent } from './add-update-objective/add-update-objective.component';
+import { AddUpdateCategoryComponent } from './add-update-category/add-update-category.component';
 
 
 
@@ -43,6 +45,8 @@ import {ObjectiveService} from './service/objective.service';
     CreateUpdateCategoryComponent,
     CelebrationsComponent,
     AddUpdateCelebrationComponent,
+    AddUpdateObjectiveComponent,
+    AddUpdateCategoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +65,8 @@ import {ObjectiveService} from './service/objective.service';
     MatNativeDateModule,
     MatButtonModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule
   ],
   providers: [CelebrationService, CategoryService, ObjectiveService,  MatDatepickerModule],
   bootstrap: [AppComponent]
