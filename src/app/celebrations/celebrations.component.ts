@@ -36,4 +36,8 @@ export class CelebrationsComponent implements OnInit {
         error => console.log(error));
   }
 
+  isDone(celebration: Celebration): boolean {
+    return true;
+  }
+
 }

@@ -25,5 +25,9 @@ export class ObjectiveService {
   getObjectivesByCategoryName(categoryName: String): Observable<Array<Objective>> {
     return this.http.get<Array<Objective>>(this.objectivesUrl + '/category=' + categoryName);
   }
+
+  getDoneObjectivesCount(): Observable<number> {
+    return this.http.get<number>(this.objectivesUrl + '/stats');
+  }
 }
 
