@@ -10,7 +10,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let celebration of celebrations">
+        <tr *ngFor="let celebration of celebrations | sort:'date'">
           <td> {{ celebration.date }}</td>
           <td> {{ celebration.description}}</td>
           <td>

@@ -31,6 +31,7 @@ import {CategoryService} from './service/category.service';
 import {ObjectiveService} from './service/objective.service';
 import { AddUpdateObjectiveComponent } from './add-update-objective/add-update-objective.component';
 import { AddUpdateCategoryComponent } from './add-update-category/add-update-category.component';
+import {ArraySortPipe} from './pipe/sort-pipe';
 
 
 
@@ -47,6 +48,7 @@ import { AddUpdateCategoryComponent } from './add-update-category/add-update-cat
     AddUpdateCelebrationComponent,
     AddUpdateObjectiveComponent,
     AddUpdateCategoryComponent,
+    ArraySortPipe
   ],
   imports: [
     BrowserModule,
