@@ -33,5 +33,14 @@ export class ObjectivesComponent implements OnInit {
     );
   }
 
+  categoryChange() {
+    this.objectiveService.getObjectivesByCategoryName(this.selected.name)
+      .subscribe( data => {
+        console.log(data);
+        console.log(typeof data);
+        this.objectives = data;
+      });
+  }
+
 
 }

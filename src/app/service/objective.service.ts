@@ -21,5 +21,9 @@ export class ObjectiveService {
   getObjectives(): Observable<Array<Objective>> {
     return this.http.get<Array<Objective>>(this.objectivesUrl);
   }
+
+  getObjectivesByCategoryName(categoryName: String): Observable<Array<Objective>> {
+    return this.http.get<Array<Objective>>(this.objectivesUrl + '/category=' + categoryName);
+  }
 }
 
