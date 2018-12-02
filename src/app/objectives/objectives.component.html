@@ -25,6 +25,12 @@
         <p>
           {{ objective.description }}
         </p>
+
+        <ng-container *ngFor="let todo of objective.todos">
+          TODO: {{ todo.name }}
+        </ng-container>
+
+
       </mat-card-content>
     </mat-card>
     </ng-container>
