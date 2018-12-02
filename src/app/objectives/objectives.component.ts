@@ -14,7 +14,7 @@ export class ObjectivesComponent implements OnInit {
 
   objectives: Objective[];
   categories: Category[];
-  selected: Category;
+  selected: String;
 
   constructor(private router: Router, private objectiveService: ObjectiveService, private categoryService: CategoryService) { }
 
@@ -34,9 +34,9 @@ export class ObjectivesComponent implements OnInit {
   }
 
   categoryChange() {
-    this.objectiveService.getObjectivesByCategoryName(this.selected.name)
+    this.objectiveService.getObjectivesByCategoryName(this.selected)
       .subscribe( data => {
-        console.log(data);
+        console.log('CATEGORY: ' + this.selected);
         console.log(typeof data);
         this.objectives = data;
       });

@@ -5,7 +5,7 @@
     <mat-form-field>
       <mat-select [(value)]="selected" (selectionChange)="categoryChange()">
         <ng-container *ngFor="let category of categories">
-          <mat-option>{{ category.name }}</mat-option>
+          <mat-option value="{{category.name}}"> {{ category.name }} </mat-option>
         </ng-container>
       </mat-select>
     </mat-form-field>
@@ -27,7 +27,7 @@
         </p>
 
         <ng-container *ngFor="let todo of objective.todos">
-          TODO: {{ todo.name }}
+          <mat-checkbox [disabled]="true" [checked]="todo.isDone">{{ todo.name }}</mat-checkbox><br>
         </ng-container>
 
 
