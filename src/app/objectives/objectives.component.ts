@@ -34,12 +34,21 @@ export class ObjectivesComponent implements OnInit {
   }
 
   categoryChange() {
+    if (this.selected === 'all') {
+      this.objectiveService.getObjectives()
+        .subscribe( data => {
+          console.log(data);
+          console.log(typeof data);
+          this.objectives = data;
+        });
+    } else {
     this.objectiveService.getObjectivesByCategoryName(this.selected)
       .subscribe( data => {
         console.log('CATEGORY: ' + this.selected);
         console.log(typeof data);
         this.objectives = data;
       });
+    }
   }
 
 }

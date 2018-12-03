@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Objective} from '../model/Objective';
+import {Category} from '../model/Category';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -28,6 +29,10 @@ export class ObjectiveService {
 
   getDoneObjectivesCount(): Observable<number> {
     return this.http.get<number>(this.objectivesUrl + '/stats');
+  }
+
+  createObjective(objective): Observable<Objective> {
+    return this.http.post<Objective>(this.objectivesUrl , objective);
   }
 }
 

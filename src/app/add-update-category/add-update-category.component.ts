@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Celebration} from '../model/Celebration';
 import {Router} from '@angular/router';
-import {CelebrationService} from '../service/celebration.service';
 import {Category} from '../model/Category';
 import {CategoryService} from '../service/category.service';
 

@@ -1,5 +1,31 @@
 <mat-card>
   <mat-card-title>Nowy cel</mat-card-title>
   <mat-card-content>
+    <div class="col-md-6">
+      <form>
+        <div class="form-group">
+          <mat-form-field>
+            <input matInput [(ngModel)]="objective.name" placeholder="Nazwa" name="name" class="form-control" id="name">
+          </mat-form-field>
+        </div>
+
+        <mat-form-field>
+          <mat-select [(value)]="objective.category" (selectionChange)="categoryChange()">
+            <ng-container *ngFor="let category of categories">
+              <mat-option value="{{category}}"> {{ category.name }} </mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+
+        <div class="form-group">
+          <mat-form-field>
+            <input matInput [(ngModel)]="objective.description" placeholder="Opis" name="description" class="form-control" id="description">
+          </mat-form-field>
+        </div>
+
+
+        <button mat-raised-button (click)="createObjective()">Dodaj</button>
+      </form>
+    </div>
   </mat-card-content>
 </mat-card>
