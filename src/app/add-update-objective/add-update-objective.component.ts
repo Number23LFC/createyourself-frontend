@@ -18,7 +18,7 @@ export class AddUpdateObjectiveComponent implements OnInit {
   objective: Objective = {
     description: '',
     name: '',
-    category: null,
+    category: { id: null, name: '', description: '', objectives: null},
     todos: null,
     id: null,
   };

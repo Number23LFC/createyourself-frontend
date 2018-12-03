@@ -10,9 +10,9 @@
         </div>
 
         <mat-form-field>
-          <mat-select [(value)]="objective.category" (selectionChange)="categoryChange()">
+          <mat-select [(value)]="objective.category.name" (selectionChange)="categoryChange()">
             <ng-container *ngFor="let category of categories">
-              <mat-option value="{{category}}"> {{ category.name }} </mat-option>
+              <mat-option value="{{category.name}}"> {{ category.name }} </mat-option>
             </ng-container>
           </mat-select>
         </mat-form-field>
