@@ -7,4 +7,5 @@ export interface Objective {
   name: string;
   category: Category;
   todos: Todo[];
+  isDone: boolean;
 }

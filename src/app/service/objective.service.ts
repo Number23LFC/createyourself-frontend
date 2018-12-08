@@ -34,5 +34,13 @@ export class ObjectiveService {
   createObjective(objective): Observable<Objective> {
     return this.http.post<Objective>(this.objectivesUrl , objective);
   }
+
+  getObjectiveById(id: number): Observable<Objective> {
+    return this.http.get<Objective>(this.objectivesUrl + '/' + id);
+  }
+
+  markObjectiveAsDone(id: number): Observable<Objective> {
+    return this.http.get<Objective>(this.objectivesUrl + '/' + id + '/done');
+  }
 }
 

@@ -20,16 +20,39 @@
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>{{ objective.name }}</mat-card-title>
         <mat-card-subtitle> {{ objective.category.name}}</mat-card-subtitle>
+        <div style='clear:both'></div>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>edit</mat-icon>
+            <span>Edycja</span>
+          </button>
+          <button mat-menu-item (click)="markObjectiveAsDone(objective.id)">
+            <mat-icon>done</mat-icon>
+            <span>Zrobione!</span>
+          </button>
+        </mat-menu>
       </mat-card-header>
-      <img mat-card-image src="assets/iceland.JPG" alt="Photo of a Shiba Inu">
       <mat-card-content>
+        <div id="firstDivistion" class="division">
+        <img mat-card-image src="assets/iceland.JPG" alt="Photo of a Shiba Inu">
+
+        </div>
+
+        <div id="second" class="division">
+          <b *ngIf="objective.todos.length > 0">Do zrobienia:</b><br><br>
+          <ng-container *ngFor="let todo of objective.todos">
+            <mat-checkbox [disabled]="true" [checked]="todo.isDone">{{ todo.name }}</mat-checkbox><br>
+          </ng-container>
+        </div>
+        <div style='clear:both'></div>
+
         <p>
           {{ objective.description }}
         </p>
 
-        <ng-container *ngFor="let todo of objective.todos">
-          <mat-checkbox [disabled]="true" [checked]="todo.isDone">{{ todo.name }}</mat-checkbox><br>
-        </ng-container>
 
 
       </mat-card-content>

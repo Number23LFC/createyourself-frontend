@@ -1,5 +1,18 @@
 <mat-card>
   <mat-card-title>Statystyki</mat-card-title>
+  <!--<div class="statsContainter">-->
+  <!--<div class="statsTile">-->
+    <!--11111-->
+  <!--</div>-->
+  <!--<div class="statsTile">-->
+    <!--22222-->
+  <!--</div>-->
+  <!--<div class="statsTile">-->
+    <!--33333-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--<div style='clear:both'></div>-->
+  <!--<br><br>-->
   <mat-card-content>
     <mat-progress-spinner
       class="example-margin"
@@ -7,6 +20,6 @@
       [mode]="mode"
       [value]="value">
     </mat-progress-spinner>
-    <h1>{{ value }} %</h1>
+    <h1>&nbsp; {{ value.toPrecision(3) }} %</h1>
   </mat-card-content>
 </mat-card>

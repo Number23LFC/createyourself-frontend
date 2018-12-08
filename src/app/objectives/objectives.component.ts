@@ -15,6 +15,7 @@ export class ObjectivesComponent implements OnInit {
   objectives: Objective[];
   categories: Category[];
   selected: String;
+  editedObjective: Objective;
 
   constructor(private router: Router, private objectiveService: ObjectiveService, private categoryService: CategoryService) { }
 
@@ -51,4 +52,13 @@ export class ObjectivesComponent implements OnInit {
     }
   }
 
+  markObjectiveAsDone(id: number) {
+    this.objectiveService.markObjectiveAsDone(id).subscribe( objective => {
+        this.editedObjective = objective;
+      console.log('ZROBIONE!: ' + this.editedObjective.name);
+      console.log('ZROBIONE!: ' + this.editedObjective.isDone);
+      console.log('ZROBIONE!: ' + typeof this.editedObjective.isDone);
+    });
+
+  }
 }

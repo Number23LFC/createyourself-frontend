@@ -21,6 +21,7 @@ export class AddUpdateObjectiveComponent implements OnInit {
     category: { id: null, name: '', description: '', objectives: null},
     todos: null,
     id: null,
+    isDone: false
   };
 
   constructor(private router: Router, private objectiveService: ObjectiveService, private  categoryService: CategoryService) { }
