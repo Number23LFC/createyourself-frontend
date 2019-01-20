@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Objective} from '../model/Objective';
-import {Category} from '../model/Category';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,7 +14,8 @@ const httpOptions = {
 @Injectable()
 export class ObjectiveService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   private objectivesUrl = 'http://localhost:8080/objectives';
 
@@ -31,8 +31,16 @@ export class ObjectiveService {
     return this.http.get<number>(this.objectivesUrl + '/stats');
   }
 
+  getTodoObjectivesCount(): Observable<number> {
+    return this.http.get<number>(this.objectivesUrl + '/stats/todo');
+  }
+
+  getAllObjectivesCount(): Observable<number> {
+    return this.http.get<number>(this.objectivesUrl + '/stats/all');
+  }
+
   createObjective(objective): Observable<Objective> {
-    return this.http.post<Objective>(this.objectivesUrl , objective);
+    return this.http.post<Objective>(this.objectivesUrl, objective);
   }
 
   getObjectiveById(id: number): Observable<Objective> {
