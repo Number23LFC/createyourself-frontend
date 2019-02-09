@@ -16,6 +16,7 @@ const appRoutes: Routes = [
   {path: 'celebrations-add-update', component: AddUpdateCelebrationComponent},
   {path: 'celebrations-add-update/:id', component: AddUpdateCelebrationComponent},
   {path: 'objective-add-update', component: AddUpdateObjectiveComponent},
+  {path: 'objective-add-update/:id', component: AddUpdateObjectiveComponent},
   {path: 'categories-add-update', component: AddUpdateCategoryComponent},
   {path: 'categories-add-update/:id', component: AddUpdateCategoryComponent},
   {path: 'stats', component: StatsComponent, pathMatch: 'full'},

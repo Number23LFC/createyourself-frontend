@@ -28,7 +28,7 @@
 
         <!--HR23 TODO: implement tree with checkboxes: https://material.angular.io/components/tree/examples-->
 
-        <button mat-raised-button (click)="createObjective()">Dodaj</button>
+        <button mat-raised-button (click)="createObjective()">{{idStr != null ? "Zapisz" : "Dodaj"}}</button>
       </form>
     </div>
   </mat-card-content>

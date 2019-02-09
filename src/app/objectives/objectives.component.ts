@@ -59,6 +59,10 @@ export class ObjectivesComponent implements OnInit {
       console.log('ZROBIONE!: ' + this.editedObjective.isDone);
       console.log('ZROBIONE!: ' + typeof this.editedObjective.isDone);
     });
+  }
 
+
+  editObjective(id: number) {
+    this.router.navigate(['objective-add-update/' + id]);
   }
 }

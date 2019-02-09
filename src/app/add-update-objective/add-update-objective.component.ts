@@ -1,6 +1,6 @@
 import {Component, Injectable, OnInit} from '@angular/core';
 import {Category} from '../model/Category';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {CategoryService} from '../service/category.service';
 import {Objective} from '../model/Objective';
 import {ObjectiveService} from '../service/objective.service';
@@ -51,7 +51,10 @@ export class AddUpdateObjectiveComponent implements OnInit {
     eventDate: new Date(),
   };
 
-  constructor(private router: Router, private objectiveService: ObjectiveService, private  categoryService: CategoryService) { }
+  objectiveId: number;
+  idStr: string;
+
+  constructor(private router: Router, private objectiveService: ObjectiveService, private  categoryService: CategoryService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.categoryService.getCategories()
@@ -60,12 +63,22 @@ export class AddUpdateObjectiveComponent implements OnInit {
         console.log(typeof data);
         this.categories = data;
       });
+
+    this.idStr =  this.activeRoute.snapshot.paramMap.get('id');
+    if (this.idStr != null) {
+      this.objectiveId = Number(this.activeRoute.snapshot.paramMap.get('id'));
+      console.log('HR23: Edytuje date o id: ' + this.activeRoute.snapshot.paramMap.get('id'));
+      this.objectiveService.getObjectiveById(this.objectiveId).subscribe(data => {
+          this.objective = data;
+        }
+      );
+    }
   }
 
   createObjective(): void {
     this.objectiveService.createObjective(this.objective)
       .subscribe( data => {
-        alert('Objective created successfully.');
+        console.log('ZAPISUJE CEL:' + this.objective.id);
       });
     this.router.navigate(['objectives']);
   }
