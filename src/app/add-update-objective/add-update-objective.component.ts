@@ -1,9 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import {Category} from '../model/Category';
 import {Router} from '@angular/router';
 import {CategoryService} from '../service/category.service';
 import {Objective} from '../model/Objective';
 import {ObjectiveService} from '../service/objective.service';
+
+/**
+ * Node for to-do item
+ */
+export class TodoItemNode {
+  children: TodoItemNode[];
+  item: string;
+}
+
+/** Flat to-do item node with expandable and level information */
+export class TodoItemFlatNode {
+  item: string;
+  level: number;
+  expandable: boolean;
+}
+
+/**
+ * The Json object for to-do list data.
+ */
+const TREE_DATA = {
+  Reminders: [
+    'Cook dinner',
+    'Read the Material Design spec',
+    'Upgrade Application to Angular'
+  ]
+};
+
 
 @Component({
   selector: 'app-add-update-objective',

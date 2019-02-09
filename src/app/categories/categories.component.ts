@@ -22,5 +22,9 @@ export class CategoriesComponent implements OnInit {
         this.categories = data;
       });
   }
+  editCategory(id: number) {
+    this.router.navigate(['categories-add-update/' + id]);
+  }
+
 
 }

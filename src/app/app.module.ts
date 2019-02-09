@@ -20,7 +20,7 @@ import {
   MatInputModule, MatListModule,
   MatMenuModule,
   MatNativeDateModule, MatProgressBarModule,
-  MatSelectModule
+  MatSelectModule, MatTreeModule
 } from '@angular/material';
 import { CelebrationsComponent } from './celebrations/celebrations.component';
 import {CelebrationService} from './service/celebration.service';
@@ -69,7 +69,8 @@ import {ArraySortPipe} from './pipe/sort-pipe';
     MatDividerModule,
     MatListModule,
     MatGridListModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatTreeModule
   ],
   providers: [CelebrationService, CategoryService, ObjectiveService,  MatDatepickerModule],
   bootstrap: [AppComponent]
