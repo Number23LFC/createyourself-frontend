@@ -4,7 +4,6 @@ import {Router} from '@angular/router';
 import {CategoryService} from '../service/category.service';
 import {Objective} from '../model/Objective';
 import {ObjectiveService} from '../service/objective.service';
-import {toDate} from '@angular/common/src/i18n/format_date';
 
 @Component({
   selector: 'app-add-update-objective',
@@ -21,7 +20,8 @@ export class AddUpdateObjectiveComponent implements OnInit {
     category: { id: null, name: '', description: '', objectives: null},
     todos: null,
     id: null,
-    isDone: false
+    isDone: false,
+    eventDate: new Date(),
   };
 
   constructor(private router: Router, private objectiveService: ObjectiveService, private  categoryService: CategoryService) { }

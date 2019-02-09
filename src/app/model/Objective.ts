@@ -8,4 +8,5 @@ export interface Objective {
   category: Category;
   todos: Todo[];
   isDone: boolean;
+  eventDate: Date;
 }

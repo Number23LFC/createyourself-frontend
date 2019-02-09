@@ -27,3 +27,9 @@ mat-card-header {
 .mat-icon-button{
   float: right;
 }
+
+#progress {
+  bottom: 0;
+}
+
+

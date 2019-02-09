@@ -40,13 +40,21 @@
         <img mat-card-image src="assets/iceland.JPG" alt="Photo of a Shiba Inu">
 
         </div>
-
+        <b>Data:</b> {{ objective.eventDate }}
+        <br/><br/><br/>
         <div id="second" class="division">
           <b *ngIf="objective.todos.length > 0">Do zrobienia:</b><br><br>
           <ng-container *ngFor="let todo of objective.todos">
             <mat-checkbox [disabled]="true" [checked]="todo.isDone">{{ todo.name }}</mat-checkbox><br>
           </ng-container>
+
+          <br>
+          <div id="progress">
+            <mat-progress-bar mode="determinate" value="50"></mat-progress-bar>
+          </div>
         </div>
+
+
         <div style='clear:both'></div>
 
         <p>
