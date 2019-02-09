@@ -23,6 +23,13 @@
             <input matInput [(ngModel)]="objective.description" placeholder="Opis" name="description" class="form-control" id="description">
           </mat-form-field>
         </div>
+        <br>
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Data" [value]="objective.eventDate" (dateChange)="updateDate($event)">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
 
         <br><br><br>
 

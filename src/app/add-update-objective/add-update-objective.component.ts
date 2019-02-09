@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {CategoryService} from '../service/category.service';
 import {Objective} from '../model/Objective';
 import {ObjectiveService} from '../service/objective.service';
+import {MatDatepickerInputEvent} from '@angular/material';
 
 /**
  * Node for to-do item
@@ -78,12 +79,16 @@ export class AddUpdateObjectiveComponent implements OnInit {
   createObjective(): void {
     this.objectiveService.createObjective(this.objective)
       .subscribe( data => {
-        console.log('ZAPISUJE CEL:' + this.objective.id);
+        console.log('ZAPISUJE CEL:' + this.objective.id + 'data: ' +  this.objective.eventDate);
       });
     this.router.navigate(['objectives']);
   }
 
   categoryChange() {
      console.log('CAT CHANGE NAME: ' + this.objective.category.name);
+  }
+
+  updateDate(event: MatDatepickerInputEvent<Date>) {
+    this.objective.eventDate = event.value;
   }
 }
