@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Celebration} from '../model/Celebration';
 import {Observable} from 'rxjs';
+import {Category} from '../model/Category';
 
 
 const httpOptions = {
@@ -21,6 +22,10 @@ export class CelebrationService {
 
   getCelebrations(): Observable<Array<Celebration>> {
     return this.http.get<Array<Celebration>>(this.celebrationUrl);
+  }
+
+  findCelebrationById(id: number): Observable<Celebration> {
+    return this.http.get<Celebration>(this.celebrationUrl + '/' + id);
   }
 
   createCelebration(celebration): Observable<Celebration> {

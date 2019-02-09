@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {CelebrationService} from '../service/celebration.service';
 import {Celebration} from '../model/Celebration';
+import {CategoryService} from '../service/category.service';
 
 @Component({
   selector: 'app-add-update-celebration',
@@ -14,10 +15,21 @@ export class AddUpdateCelebrationComponent implements OnInit {
     date: null,
     id: null,
   };
+  celebrationId: number;
+  idStr: string;
 
-  constructor(private router: Router, private celebrationService: CelebrationService) { }
+  constructor(private router: Router, private celebrationService: CelebrationService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.idStr =  this.activeRoute.snapshot.paramMap.get('id');
+    if (this.idStr != null) {
+      this.celebrationId = Number(this.activeRoute.snapshot.paramMap.get('id'));
+      console.log('HR23: Edytuje date o id: ' + this.activeRoute.snapshot.paramMap.get('id'));
+      this.celebrationService.findCelebrationById(this.celebrationId).subscribe(data => {
+          this.celebration = data;
+        }
+      );
+    }
   }
 
   createCelebration(): void {

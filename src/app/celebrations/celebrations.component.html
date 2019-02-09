@@ -5,7 +5,7 @@
       <table class="table table-striped">
         <thead>
         <tr>
-          <th>Data </th>
+          <th>Data</th>
           <th>Opis</th>
         </tr>
         </thead>
@@ -14,12 +14,12 @@
           <td> {{ celebration.date }}</td>
           <td> {{ celebration.description}}</td>
           <td>
-          <button mat-icon-button>
-            <mat-icon aria-label="Dodaj">edit</mat-icon>
-          </button>
-          <button mat-icon-button (click)="deleteCelebration(celebration)">
-            <mat-icon aria-label="Usuń">delete</mat-icon>
-          </button>
+            <button mat-icon-button (click)="editCelebration(celebration.id)">
+              <mat-icon aria-label="Dodaj">edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="deleteCelebration(celebration)">
+              <mat-icon aria-label="Usuń">delete</mat-icon>
+            </button>
           </td>
           <mat-divider></mat-divider>
         </tr>

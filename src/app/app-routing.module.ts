@@ -14,6 +14,7 @@ const appRoutes: Routes = [
   {path: 'categories', component: CategoriesComponent},
   {path: 'celebrations', component: CelebrationsComponent},
   {path: 'celebrations-add-update', component: AddUpdateCelebrationComponent},
+  {path: 'celebrations-add-update/:id', component: AddUpdateCelebrationComponent},
   {path: 'objective-add-update', component: AddUpdateObjectiveComponent},
   {path: 'categories-add-update', component: AddUpdateCategoryComponent},
   {path: 'categories-add-update/:id', component: AddUpdateCategoryComponent},

@@ -40,4 +40,8 @@ export class CelebrationsComponent implements OnInit {
     return true;
   }
 
+  editCelebration(id: number) {
+    this.router.navigate(['celebrations-add-update/' + id]);
+  }
+
 }
