@@ -32,6 +32,13 @@
 
 
         <br><br><br>
+        <label class="image-upload-container btn btn-bwm">
+          <span>Select Image</span>
+          <input #imageInput
+                 type="file"
+                 accept="image/*"
+                 (change)="processFile(objective.id, imageInput)">
+        </label>
 
         <!--HR23 TODO: implement tree with checkboxes: https://material.angular.io/components/tree/examples-->
 

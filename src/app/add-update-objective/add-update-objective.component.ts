@@ -32,6 +32,10 @@ const TREE_DATA = {
   ]
 };
 
+class ImageSnippet {
+  constructor(public src: string, public file: File) {}
+}
+
 
 @Component({
   selector: 'app-add-update-objective',
@@ -54,6 +58,8 @@ export class AddUpdateObjectiveComponent implements OnInit {
 
   objectiveId: number;
   idStr: string;
+  selectedFile: ImageSnippet;
+
 
   constructor(private router: Router, private objectiveService: ObjectiveService, private  categoryService: CategoryService, private activeRoute: ActivatedRoute) { }
 
@@ -90,5 +96,9 @@ export class AddUpdateObjectiveComponent implements OnInit {
 
   updateDate(event: MatDatepickerInputEvent<Date>) {
     this.objective.eventDate = event.value;
+  }
+
+  processFile(id: number, imageInput: any) {
+    console.log('id: ' + id);
   }
 }
