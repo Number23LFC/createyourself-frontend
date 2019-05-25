@@ -88,6 +88,7 @@ export class AddUpdateObjectiveComponent implements OnInit {
     this.objectiveService.createObjective(this.objective)
       .subscribe( data => {
         console.log('ZAPISUJE CEL:' + this.objective.id + 'data: ' +  this.objective.eventDate);
+        console.log('ZAPISUJE CEL:' + this.objective.todos[0].name + ' ' + this.objective.todos[0].isDone);
       });
     this.router.navigate(['objectives']);
   }
@@ -105,8 +106,18 @@ export class AddUpdateObjectiveComponent implements OnInit {
   }
 
   addTodo() {
-    console.log('Dodaje TODO' +  this.editedTodo.name);
-    this.objective.todos.push(this.editedTodo);
+    const newTodo: Todo = { id: this.editedTodo.id, name: this.editedTodo.name, isDone: this.editedTodo.isDone}
+    console.log('Dodaje TODO' + newTodo);
+    this.objective.todos.push(newTodo);
     console.log('TODO list: ' + this.objective.todos[0].name);
+  }
+
+  toggleTodoComplete(todo: Todo) {
+    console.log('TODO done: ' + todo.name);
+    todo.isDone = true;
+  }
+
+  removeTodo(todo: Todo) {
+    this.objective.todos.splice(todo.id);
   }
 }
