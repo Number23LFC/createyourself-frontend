@@ -5,6 +5,7 @@ import {CategoryService} from '../service/category.service';
 import {Objective} from '../model/Objective';
 import {ObjectiveService} from '../service/objective.service';
 import {MatDatepickerInputEvent} from '@angular/material';
+import {Todo} from '../model/Todo';
 
 /**
  * Node for to-do item
@@ -50,12 +51,13 @@ export class AddUpdateObjectiveComponent implements OnInit {
     description: '',
     name: '',
     category: { id: null, name: '', description: '', objectives: null},
-    todos: null,
+    todos: [],
     id: null,
     isDone: false,
     eventDate: new Date(),
   };
 
+  editedTodo: Todo = { id: null, name: '', isDone: false };
   objectiveId: number;
   idStr: string;
   selectedFile: ImageSnippet;
@@ -100,5 +102,11 @@ export class AddUpdateObjectiveComponent implements OnInit {
 
   processFile(id: number, imageInput: any) {
     console.log('id: ' + id);
+  }
+
+  addTodo() {
+    console.log('Dodaje TODO' +  this.editedTodo.name);
+    this.objective.todos.push(this.editedTodo);
+    console.log('TODO list: ' + this.objective.todos[0].name);
   }
 }

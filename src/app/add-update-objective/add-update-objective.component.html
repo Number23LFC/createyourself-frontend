@@ -42,6 +42,27 @@
 
         <!--HR23 TODO: implement tree with checkboxes: https://material.angular.io/components/tree/examples-->
 
+        <section class="todoapp">
+          <header class="header">
+            <mat-card-title>TODO</mat-card-title>
+            <input class="new-todo" placeholder="Co trzeba zrobić?" autofocus="" [(ngModel)]="editedTodo.name" (keyup.enter)="addTodo()" name="new-todo">
+            <button mat-raised-button (click)="addTodo()">Dodaj</button>
+          </header>
+          <section class="main" *ngIf="objective.todos?.length > 0">
+            <ul class="todo-list">
+              <li *ngFor="let todo of objective.todos" [class.completed]="todo.complete">
+                <div class="view">
+                  <input class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
+                  <label>{{todo.name}}</label>
+                  <button class="destroy" (click)="removeTodo(todo)"></button>
+                </div>
+              </li>
+            </ul>
+          </section>
+          <footer class="footer" *ngIf="objective.todos?.length > 0">
+            <span class="todo-count"><strong>{{objective.todos.length}}</strong> {{objective.todos.length == 1 ? 'item' : 'items'}} left</span>
+          </footer>
+        </section>
         <button mat-raised-button (click)="createObjective()">{{idStr != null ? "Zapisz" : "Dodaj"}}</button>
       </form>
     </div>
