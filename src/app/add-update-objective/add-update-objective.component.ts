@@ -60,8 +60,8 @@ export class AddUpdateObjectiveComponent implements OnInit {
   editedTodo: Todo = { id: null, name: '', isDone: false };
   objectiveId: number;
   idStr: string;
-  selectedFile: ImageSnippet;
-
+  selectedFiles: FileList;
+  currentFileUpload: File;
 
   constructor(private router: Router, private objectiveService: ObjectiveService, private  categoryService: CategoryService, private activeRoute: ActivatedRoute) { }
 
@@ -88,7 +88,15 @@ export class AddUpdateObjectiveComponent implements OnInit {
     this.objectiveService.createObjective(this.objective)
       .subscribe( data => {
         console.log('ZAPISUJE CEL:' + this.objective.id + 'data: ' +  this.objective.eventDate);
-        console.log('ZAPISUJE CEL:' + this.objective.todos[0].name + ' ' + this.objective.todos[0].isDone);
+        console.log('DATA: ' + data.id);
+        this.currentFileUpload = this.selectedFiles.item(0);
+        this.objectiveService.uploadImage(data.id, this.currentFileUpload).subscribe(
+          (res) => {
+
+          },
+          (err) => {
+
+          });
       });
     this.router.navigate(['objectives']);
   }
@@ -101,8 +109,10 @@ export class AddUpdateObjectiveComponent implements OnInit {
     this.objective.eventDate = event.value;
   }
 
-  processFile(id: number, imageInput: any) {
-    console.log('id: ' + id);
+  processFile(objective: Objective, event: any) {
+    this.selectedFiles = event.target.files;
+    console.log('processFile id: ' + objective.id);
+    console.log('processFile foto: ' + event.target.files);
   }
 
   addTodo() {

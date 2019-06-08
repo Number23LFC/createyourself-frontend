@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpEvent, HttpHeaders, HttpRequest} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Objective} from '../model/Objective';
 
@@ -50,5 +50,17 @@ export class ObjectiveService {
   markObjectiveAsDone(id: number): Observable<Objective> {
     return this.http.get<Objective>(this.objectivesUrl + '/' + id + '/done');
   }
+
+  uploadImage(objectiveId: number, file: File): Observable<HttpEvent<{}>> {
+    const formdata: FormData = new FormData();
+    formdata.append('file', file);
+    const req = new HttpRequest('POST', this.objectivesUrl + '/' + objectiveId + '/image', formdata, {
+      reportProgress: true,
+      responseType: 'text'
+    });
+    return this.http.request(req);
+  }
+
+
 }
 
