@@ -65,4 +65,11 @@ export class ObjectivesComponent implements OnInit {
   editObjective(id: number) {
     this.router.navigate(['objective-add-update/' + id]);
   }
+
+  calculateProgress(objective: Objective): number {
+    const allTodos = objective.todos.length;
+    const done = objective.todos.filter(p => p.isDone).length;
+    console.log('HR23: Wszystkich: ' + allTodos + ', zrobione: ' + done + 'Zrobione%: ' + (done / allTodos));
+    return (done / allTodos) * 100;
+  }
 }
