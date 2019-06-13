@@ -58,6 +58,7 @@ export class ObjectivesComponent implements OnInit {
       console.log('ZROBIONE!: ' + this.editedObjective.name);
       console.log('ZROBIONE!: ' + this.editedObjective.isDone);
       console.log('ZROBIONE!: ' + typeof this.editedObjective.isDone);
+      this.router.navigate(['objectives']);
     });
   }
 
@@ -70,7 +71,7 @@ export class ObjectivesComponent implements OnInit {
     const allTodos = objective.todos.length;
     const done = objective.todos.filter(p => p.isDone).length;
     console.log('HR23: Wszystkich: ' + allTodos + ', zrobione: ' + done + 'Zrobione%: ' + (done / allTodos));
-    if ((done / allTodos) === 1) {
+    if (!objective.isDone && (done / allTodos) === 1) {
        this.markObjectiveAsDone(objective.id);
     }
     return (done / allTodos) * 100;
