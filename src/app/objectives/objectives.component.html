@@ -14,7 +14,7 @@
       <mat-icon aria-label="Dodaj">add</mat-icon>
     </button>
 
-    <ng-container *ngFor="let objective of objectives">
+    <ng-container *ngFor="let objective of objectives | sort:'category'">
     <mat-card class="objective-card">
       <mat-card-header>
         <div mat-card-avatar [ngClass]="(objective.isDone) ? 'image-done' : 'image-notyet'"></div>
