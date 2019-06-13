@@ -17,7 +17,7 @@
     <ng-container *ngFor="let objective of objectives">
     <mat-card class="objective-card">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
+        <div mat-card-avatar [ngClass]="(objective.isDone) ? 'image-done' : 'image-notyet'"></div>
         <mat-card-title>{{ objective.name }}</mat-card-title>
         <mat-card-subtitle> {{ objective.category.name}}</mat-card-subtitle>
         <div style='clear:both'></div>

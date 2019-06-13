@@ -6,7 +6,17 @@
 }
 
 .example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-image: url('https://cdn.pixabay.com/photo/2017/03/28/01/46/check-mark-2180770_960_720.png');
+  background-size: cover;
+}
+
+.image-done {
+  background-image: url('https://cdn.pixabay.com/photo/2017/03/28/01/46/check-mark-2180770_960_720.png');
+  background-size: cover;
+}
+
+.image-notyet {
+  background-image: url('https://cdn.pixabay.com/photo/2016/05/31/10/52/not-yet-1426593_640.png');
   background-size: cover;
 }
 
