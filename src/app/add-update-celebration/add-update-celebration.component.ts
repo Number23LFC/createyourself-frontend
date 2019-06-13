@@ -14,6 +14,7 @@ export class AddUpdateCelebrationComponent implements OnInit {
     description: '',
     date: null,
     id: null,
+    isDone: false
   };
   celebrationId: number;
   idStr: string;
