@@ -44,7 +44,7 @@
         <br/><br/><br/>
         <div id="second" class="division">
           <b *ngIf="objective.todos.length > 0">Do zrobienia:</b><br><br>
-          <ng-container *ngFor="let todo of objective.todos">
+          <ng-container *ngFor="let todo of objective.todos | sort:'id'">
             <mat-checkbox [disabled]="true" [checked]="todo.isDone">{{ todo.name }}</mat-checkbox><br>
           </ng-container>
 
