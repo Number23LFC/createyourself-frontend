@@ -1,4 +1,37 @@
-<mat-card>
-  <mat-card-title>Planer miesięczny</mat-card-title>
-  <mat-card-content></mat-card-content>
-</mat-card>
+<ng-container *ngFor="let category of categories">
+  <mat-card>
+    <mat-card-title>{{ category }}</mat-card-title>
+    <mat-card-content>
+      <div class="col-md-12">
+        <table class="table table-striped">
+          <tbody>
+          <section class="todoapp">
+            <header class="header">
+              <input class="new-todo" placeholder="Co trzeba zrobić?" autofocus="" [(ngModel)]="editedTask.name"
+                     name="new-todo">
+              <button mat-raised-button (click)="addTask(category)">Dodaj</button>
+            </header>
+            <section class="main" *ngIf="tasks?.length > 0">
+              <ul class="todo-list">
+                <li *ngFor="let task of tasks" [class.completed]="task.isDone">
+                  <div class="view">
+                    <input class="toggle" type="checkbox" (click)="toggleTodoComplete(task)" [checked]="task.isDone">
+                    <label>{{task.name}}</label>
+                    <button class="destroy" (click)="removeTodo(task)"></button>
+                  </div>
+                </li>
+              </ul>
+            </section>
+            <footer class="footer" *ngIf="tasks > 0">
+              <span class="todo-count"><strong>{{tasks.length}}</strong> Pozostało do zrobienia: {{tasks.length}} </span>
+            </footer>
+          </section>
+          </tbody>
+        </table>
+      </div>
+      <button mat-icon-button routerLink="/settings">
+        <mat-icon aria-label="Usuń">add</mat-icon>
+      </button>
+    </mat-card-content>
+  </mat-card>
+</ng-container>
