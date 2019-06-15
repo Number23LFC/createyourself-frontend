@@ -28,7 +28,7 @@ export class SettingsComponent implements OnInit {
   }
 
   addTask(category: string) {
-    const newTask: Task = { id: this.editedTask.id, name: this.editedTask.name, isDone: this.editedTask.isDone, category: this.editedTask.category}
+    const newTask: Task = { id: this.editedTask.id, name: this.editedTask.name, isDone: this.editedTask.isDone, category: this.editedTask.category };
     console.log('Dodaje TODO' + newTask);
     this.tasks.push(newTask);
     console.log('TODO list: ' + this.tasks.name);

@@ -9,7 +9,6 @@
             <header class="header">
               <input class="new-todo" placeholder="Co trzeba zrobić?" autofocus="" [(ngModel)]="editedTask.name"
                      name="new-todo">
-              <button mat-raised-button (click)="addTask(category)">Dodaj</button>
             </header>
             <section class="main" *ngIf="tasks?.length > 0">
               <ul class="todo-list">
@@ -29,9 +28,7 @@
           </tbody>
         </table>
       </div>
-      <button mat-icon-button routerLink="/settings">
-        <mat-icon aria-label="Usuń">add</mat-icon>
-      </button>
     </mat-card-content>
   </mat-card>
 </ng-container>
+<button mat-raised-button (click)="createObjective()">{{idStr != null ? "Zapisz" : "Dodaj"}}</button>
