@@ -33,6 +33,7 @@ import { AddUpdateObjectiveComponent } from './add-update-objective/add-update-o
 import { AddUpdateCategoryComponent } from './add-update-category/add-update-category.component';
 import {ArraySortPipe} from './pipe/sort-pipe';
 import {TaskService} from './service/task.service';
+import {FilterPipe} from './pipe/filter-pipe';
 
 
 
@@ -49,7 +50,8 @@ import {TaskService} from './service/task.service';
     AddUpdateCelebrationComponent,
     AddUpdateObjectiveComponent,
     AddUpdateCategoryComponent,
-    ArraySortPipe
+    ArraySortPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

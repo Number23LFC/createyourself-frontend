@@ -6,29 +6,31 @@
         <table class="table table-striped">
           <tbody>
           <section class="todoapp">
-            <header class="header">
-              <input class="new-todo" placeholder="Co trzeba zrobić?" autofocus="" [(ngModel)]="editedTask.name"
-                     name="new-todo">
-            </header>
-            <section class="main" *ngIf="tasks?.length > 0">
-              <ul class="todo-list">
-                <li *ngFor="let task of tasks" [class.completed]="task.isDone">
-                  <div class="view">
-                    <input class="toggle" type="checkbox" (click)="toggleTodoComplete(task)" [checked]="task.isDone">
-                    <label>{{task.name}}</label>
-                    <button class="destroy" (click)="removeTodo(task)"></button>
-                  </div>
-                </li>
-              </ul>
+              <header class="header">
+                <input class="new-todo" placeholder="Co trzeba zrobić?" autofocus="" [(ngModel)]="editedTask.name"
+                       name="new-todo">
+              </header>
+                <section class="main" *ngIf="tasks?.length > 0">
+                  <ng-container *ngFor="let task of tasks | filter:category">
+                  <ul class="todo-list">
+                      <div class="view">
+                        <input class="toggle" type="checkbox" (click)="toggleTodoComplete(task)"
+                               [checked]="task.isDone">
+                        <label>{{task.name}}</label>
+                        <button class="destroy" (click)="removeTodo(task)"></button>
+                      </div>
+                  </ul>
+                  </ng-container>
+                </section>
+                <footer class="footer" *ngIf="tasks > 0">
+                  <span
+                    class="todo-count"><strong>{{tasks.length}}</strong> Pozostało do zrobienia: {{tasks.length}} </span>
+                </footer>
             </section>
-            <footer class="footer" *ngIf="tasks > 0">
-              <span class="todo-count"><strong>{{tasks.length}}</strong> Pozostało do zrobienia: {{tasks.length}} </span>
-            </footer>
-          </section>
           </tbody>
         </table>
       </div>
     </mat-card-content>
   </mat-card>
 </ng-container>
-<button mat-raised-button (click)="createObjective()">{{idStr != null ? "Zapisz" : "Dodaj"}}</button>
+<button mat-raised-button (click)="saveMonthPlan()">Zapisz</button>
