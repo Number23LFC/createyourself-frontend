@@ -61,6 +61,9 @@ export class ObjectiveService {
     return this.http.request(req);
   }
 
+  deleteObjective(id: number): Observable<any> {
+    return this.http.delete(`${this.objectivesUrl}/${id}`, { responseType: 'text' });
+  }
 
 }
 

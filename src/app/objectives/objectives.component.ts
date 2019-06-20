@@ -67,6 +67,13 @@ export class ObjectivesComponent implements OnInit {
     this.router.navigate(['objective-add-update/' + id]);
   }
 
+  removeObjective(id: number) {
+    this.objectiveService.deleteObjective(id).subscribe(data =>
+    console.log(data)
+    );
+    this.router.navigate(['objectives']);
+  }
+
   calculateProgress(objective: Objective): number {
     const allTodos = objective.todos.length;
     const done = objective.todos.filter(p => p.isDone).length;
