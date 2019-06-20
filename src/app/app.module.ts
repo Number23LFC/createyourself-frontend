@@ -34,6 +34,7 @@ import { AddUpdateCategoryComponent } from './add-update-category/add-update-cat
 import {ArraySortPipe} from './pipe/sort-pipe';
 import {TaskService} from './service/task.service';
 import {FilterPipe} from './pipe/filter-pipe';
+import {SortByCategoryPipe} from './pipe/sort-by-category';
 
 
 
@@ -51,6 +52,7 @@ import {FilterPipe} from './pipe/filter-pipe';
     AddUpdateObjectiveComponent,
     AddUpdateCategoryComponent,
     ArraySortPipe,
+    SortByCategoryPipe,
     FilterPipe
   ],
   imports: [
