@@ -54,4 +54,10 @@ export class SettingsComponent implements OnInit {
       this.router.navigate(['settings']);
     }
   }
+
+  clearMonthPlan(): void {
+    this.tasks = [];
+    this.saveMonthPlan();
+    this.router.navigate(['settings']);
+  }
 }
