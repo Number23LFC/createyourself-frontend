@@ -3,7 +3,8 @@ import {Task} from '../model/Task';
 import {takeWhile} from 'rxjs/internal/operators';
 
 @Pipe({
-  name: 'filter'
+  name: 'filter',
+  pure: false
 })
 
 export class FilterPipe implements PipeTransform {
