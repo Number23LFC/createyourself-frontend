@@ -3,6 +3,7 @@ import {Task} from '../model/Task';
 import {Router} from '@angular/router';
 import {TaskService} from '../service/task.service';
 import {forEach} from '@angular/router/src/utils/collection';
+import {MatCheckboxChange} from '@angular/material';
 
 @Component({
   selector: 'app-settings',
@@ -34,9 +35,9 @@ export class SettingsComponent implements OnInit {
     this.categories = this.categories;
   }
 
-  toggleTaskComplete(task: Task) {
-    console.log('TASK done: ' + task.name);
-    task.isDone = true;
+  toggleTaskComplete(task: Task, event: MatCheckboxChange) {
+    console.log('TASK done: ' + task.name + ' ' + event.checked);
+    task.isDone = event.checked;
   }
 
   removeTodo(task: Task) {
@@ -45,10 +46,9 @@ export class SettingsComponent implements OnInit {
 
   saveMonthPlan(): void {
     for (const task of this.tasks) {
-      console.log('ZAPIS TASKA: ' + task.name);
+      console.log('ZAPIS TASKA: ' + task.name + ' ' + task.isDone);
       this.tasksService.createTask(task)
         .subscribe(data => {
-          console.log('ZAPISUJE CEL:' + task.id + ' ' + task.name);
           console.log('DATA: ' + data.id);
         });
       this.router.navigate(['settings']);
@@ -56,8 +56,11 @@ export class SettingsComponent implements OnInit {
   }
 
   clearMonthPlan(): void {
-    this.tasks = [];
-    this.saveMonthPlan();
+    for (const task of this.tasks) {
+      this.tasksService.deleteTask(task.id).subscribe(data =>
+       console.log('SKASOWANO: ' + data)
+      );
+    }
     this.router.navigate(['settings']);
   }
 }

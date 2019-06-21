@@ -15,9 +15,9 @@
                   <ng-container *ngFor="let task of tasks | filter:category">
                   <ul class="todo-list">
                       <div class="view">
-                        <input class="toggle" type="checkbox" (click)="toggleTodoComplete(task)"
+                        <mat-checkbox class="toggle" type="checkbox" (change)="toggleTaskComplete(task, $event)"
                                [checked]="task.isDone">
-                        <label>{{task.name}}</label>
+                          <label>{{task.name}}</label></mat-checkbox>
                         <button class="destroy" (click)="removeTodo(task)"></button>
                       </div>
                   </ul>
