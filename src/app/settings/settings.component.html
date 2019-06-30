@@ -18,7 +18,9 @@
                         <mat-checkbox class="toggle" type="checkbox" (change)="toggleTaskComplete(task, $event)"
                                [checked]="task.isDone">
                           <label>{{task.name}}</label></mat-checkbox>
-                        <button class="destroy" (click)="removeTodo(task)"></button>
+                        <button mat-icon-button class="destroy" (click)="removeTodo(task)">
+                          <mat-icon aria-label="Dodaj">delete</mat-icon>
+                        </button>
                       </div>
                   </ul>
                   </ng-container>

@@ -4,8 +4,9 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {CategoryService} from '../service/category.service';
 import {Objective} from '../model/Objective';
 import {ObjectiveService} from '../service/objective.service';
-import {MatDatepickerInputEvent} from '@angular/material';
+import {MatCheckboxChange, MatDatepickerInputEvent} from '@angular/material';
 import {Todo} from '../model/Todo';
+import {Task} from '../model/Task';
 
 /**
  * Node for to-do item
@@ -116,18 +117,21 @@ export class AddUpdateObjectiveComponent implements OnInit {
   }
 
   addTodo() {
-    const newTodo: Todo = { id: this.editedTodo.id, name: this.editedTodo.name, isDone: this.editedTodo.isDone}
+    const newTodo: Todo = { id: this.editedTodo.id, name: this.editedTodo.name, isDone: this.editedTodo.isDone};
     console.log('Dodaje TODO' + newTodo);
     this.objective.todos.push(newTodo);
     console.log('TODO list: ' + this.objective.todos[0].name);
   }
 
-  toggleTodoComplete(todo: Todo) {
-    console.log('TODO done: ' + todo.name);
-    todo.isDone = true;
+  toggleTodoComplete(todo: Todo, event: MatCheckboxChange) {
+    console.log('TODO done: ' + todo.name + ' ' + event.checked);
+    todo.isDone = event.checked;
   }
 
   removeTodo(todo: Todo) {
-    this.objective.todos.splice(todo.id);
+    console.log('REMOVE todo: ' + todo.id + ' ' + todo.name + ' ' + todo.isDone);
+    this.objective.todos = this.objective.todos.filter(function( obj ) {
+      return obj.name !== todo.name;
+    });
   }
 }
