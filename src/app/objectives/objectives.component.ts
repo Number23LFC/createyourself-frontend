@@ -68,10 +68,16 @@ export class ObjectivesComponent implements OnInit {
   }
 
   removeObjective(id: number) {
-    this.objectiveService.deleteObjective(id).subscribe(data =>
-    console.log(data)
-    );
-    this.router.navigate(['objectives']);
+    this.objectiveService.deleteObjective(id).subscribe(data => {
+      console.log(data);
+      this.objectiveService.getObjectives()
+        .subscribe( data => {
+          console.log(data);
+          console.log(typeof data);
+          this.objectives = data;
+          this.router.navigate(['objectives']);
+        });
+    });
   }
 
   calculateProgress(objective: Objective): number {

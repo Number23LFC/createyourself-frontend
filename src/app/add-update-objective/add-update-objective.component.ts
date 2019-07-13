@@ -93,13 +93,12 @@ export class AddUpdateObjectiveComponent implements OnInit {
         this.currentFileUpload = this.selectedFiles.item(0);
         this.objectiveService.uploadImage(data.id, this.currentFileUpload).subscribe(
           (res) => {
-
+            this.router.navigate(['objectives']);
           },
           (err) => {
-
+            this.router.navigate(['objectives']);
           });
       });
-    this.router.navigate(['objectives']);
   }
 
   categoryChange() {
