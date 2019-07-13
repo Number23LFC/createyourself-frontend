@@ -41,6 +41,16 @@ export class SettingsComponent implements OnInit {
   }
 
   removeTodo(task: Task) {
+    console.log('remove task: ' + task.id + ' ' + task.name);
+    this.tasksService.deleteTask(task.id).subscribe(
+      data => {
+        console.log('After remove: ' + data)
+       this.tasksService.getTasks().subscribe( tasks => {
+         this.tasks = tasks;
+       },
+         error1 => console.log(error1));
+    },
+    error => console.log(error));
     this.tasks.splice(task.id);
   }
 
@@ -61,6 +71,10 @@ export class SettingsComponent implements OnInit {
        console.log('SKASOWANO: ' + data)
       );
     }
+      this.tasksService.getTasks().subscribe( tasks => {
+          this.tasks = tasks;
+        },
+        error1 => console.log(error1));
     this.router.navigate(['settings']);
   }
 }

@@ -121,6 +121,7 @@ export class AddUpdateObjectiveComponent implements OnInit {
     console.log('Dodaje TODO' + newTodo);
     this.objective.todos.push(newTodo);
     console.log('TODO list: ' + this.objective.todos[0].name);
+    this.editedTodo.name = '';
   }
 
   toggleTodoComplete(todo: Todo, event: MatCheckboxChange) {
