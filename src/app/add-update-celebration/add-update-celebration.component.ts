@@ -37,7 +37,7 @@ export class AddUpdateCelebrationComponent implements OnInit {
     this.celebrationService.createCelebration(this.celebration)
       .subscribe( data => {
         console.log('ZAPISUJE DATE: ' + this.celebration.id);
+        this.router.navigate(['celebrations']);
       });
-    this.router.navigate(['celebrations']);
   }
 }

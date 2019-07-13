@@ -31,4 +31,8 @@ export class CategoryService {
     return this.http.get<Category>(this.categoriesUrl + '/' + id);
   }
 
+  deleteCategory(id: number): Observable<any> {
+    console.log('usuwam: ' + id);
+    return this.http.delete(`${this.categoriesUrl}/${id}`, { responseType: 'text' });
+  }
 }

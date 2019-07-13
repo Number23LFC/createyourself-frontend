@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {Category} from '../model/Category';
 import {CategoryService} from '../service/category.service';
+import {Celebration} from "../model/Celebration";
 
 @Component({
   selector: 'app-categories',
@@ -26,5 +27,17 @@ export class CategoriesComponent implements OnInit {
     this.router.navigate(['categories-add-update/' + id]);
   }
 
+  deleteCategory(category: Category) {
+    this.categoryService.deleteCategory(category.id)
+      .subscribe(
+        data => {
+          console.log(data);
+          this.categoryService.getCategories().subscribe( cats => {
+              this.categories = cats;
+            },
+            error1 => console.log(error1));
+        },
+        error => console.log(error));
+  }
 
 }
