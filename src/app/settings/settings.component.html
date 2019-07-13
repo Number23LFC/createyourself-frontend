@@ -7,8 +7,7 @@
           <tbody>
           <section class="todoapp">
               <header class="header">
-                <input class="new-todo" placeholder="Co trzeba zrobić?" autofocus="" [(ngModel)]="editedTask.name"
-                       name="new-todo">
+                <input class="new-todo" placeholder="Co trzeba zrobić?" autofocus="" [(ngModel)]="editedTask.name" name="new-todo">
                 <button mat-raised-button (click)="addTask(category)">Dodaj</button>
               </header>
                 <section class="main" *ngIf="tasks?.length > 0">

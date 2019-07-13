@@ -32,6 +32,7 @@ export class SettingsComponent implements OnInit {
     console.log('Dodaje TODO' + newTask.category  + ' ' + newTask.name);
     this.tasks.push(newTask);
     console.log('TODO list: ' + this.tasks);
+    this.editedTask.name = '';
     this.categories = this.categories;
   }
 
