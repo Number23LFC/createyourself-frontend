@@ -90,6 +90,7 @@ export class AddUpdateObjectiveComponent implements OnInit {
       .subscribe( data => {
         console.log('ZAPISUJE CEL:' + this.objective.id + 'data: ' +  this.objective.eventDate);
         console.log('DATA: ' + data.id);
+        if (this.selectedFiles != null) {
         this.currentFileUpload = this.selectedFiles.item(0);
         this.objectiveService.uploadImage(data.id, this.currentFileUpload).subscribe(
           (res) => {
@@ -98,6 +99,8 @@ export class AddUpdateObjectiveComponent implements OnInit {
           (err) => {
             this.router.navigate(['objectives']);
           });
+        }
+        this.router.navigate(['objectives']);
       });
   }
 
